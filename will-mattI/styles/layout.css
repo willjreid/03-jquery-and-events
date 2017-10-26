@@ -36,6 +36,13 @@ article h1 {
   margin: 4vw 0;
 }
 
+#filters {
+  list-style-type: none;
+}
+#filters li {
+  display: inline;
+}
+
 #about {
   display: none;
 }
