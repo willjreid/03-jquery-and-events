@@ -36,6 +36,9 @@ article h1 {
   margin: 4vw 0;
 }
 
+#about {
+  display: none;
+}
 #about header {
   text-align: center;
   padding: 3vw;
@@ -49,6 +52,7 @@ article h1 {
 
 #about section ul {
   padding-bottom: 5vw;
+
 }
 
 footer {

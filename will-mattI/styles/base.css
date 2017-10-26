@@ -5,11 +5,11 @@
 }
 
 h1 {
-  font-family: "Arimo";
+  font-family: "Arimo", sans-serif;
 }
 
 h2, h3, h4, p, .byline {
-font-family: "Roboto";
+font-family: "Roboto", sans-serif;
 }
 
 address, .byline:nth-child(1n+0) {
