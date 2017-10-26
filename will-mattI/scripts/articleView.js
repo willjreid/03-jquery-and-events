@@ -43,19 +43,24 @@ articleView.populateFilters = function() {
 };
 
 articleView.handleAuthorFilter = function() {
+  // $('#author-filter').on('change', function() {
   $('#author-filter').on('change', function() {
     // REVIEW: Inside this function, "this" is the element that triggered the event handler function we are defining. "$(this)" is using jQuery to select that element (analogous to event.target that we have seen before), so we can chain jQuery methods onto it.
     if ($(this).val()) {
+      console.log('author change')
       let $selectionA = $(this).val();
-      $('.article').hide();
-      $(`select[data-author=${$selectionA}]`).show().fadeId(750);
+      console.log($selectionA);
+      $('article').hide();
+      // $('article[data-author="' + $selectionA + '"]').fadeIn(750);
+      $(`article[data-author="${$selectionA}"]`).fadeIn(750);
+      // $(article[data-author="${$(this).val()}"]).fadeIn(750);
 
       // DONE: If the <select> menu was changed to an option that has a value, we first need to hide all the articles, and then show just the ones that match for the author that was selected.
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
 
     } else {
       // DONE: If the <select> menu was changed to an option that is blank, we should first show all the articles, except the one article we are using as a template.
-      $('.article').show();
+      $('article').show();
     }
     $('#category-filter').val('');
   });
@@ -86,9 +91,7 @@ articleView.handleMainNav = function() {
   // So: You need to dynamically build a selector string with the correct ID, based on the data available to you on the .tab element that was clicked.
 
   $('.main-nav .tab').on('click', function() {
-    console.log('click');
     let $selectionT = $(this).attr('data-content');
-    console.log($selectionT);
     $('.tab-content').hide();
     $(`#${$selectionT}`).fadeIn(750);
   })
@@ -101,7 +104,10 @@ articleView.setTeasers = function() {
   // REVIEW: Hide elements beyond the first 2 in any article body.
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function() {
-    $('.article-body *:nth-of-type(n+2)').fadeIn(750);
+    if ($(this).val()) {
+      let $selectionR = $(this).val();
+      $('.article-body *:nth-of-type(n+2) ').fadeIn(750);
+    }
     //stretch goal here: text to become 'read less'
   })
   // TODO: Add an event handler to reveal all the hidden elements, when the .read-on link is clicked. You can go ahead and hide the "Read On" link once it has been clicked. Be sure to prevent the default link-click action!
@@ -109,7 +115,7 @@ articleView.setTeasers = function() {
 
 };
 
-// TODO: Call all of the above functions, once we are sure the DOM is ready.
+// DONE: Call all of the above functions, once we are sure the DOM is ready.
 $(document).ready(function() {
   articleView.populateFilters();
   articleView.handleAuthorFilter();
