@@ -72,26 +72,24 @@ _Your repository must include:_
 _Your README.md must include:_
 
 ```md
-# Project Name
+# Code Fellows 301 Day 3 -- jQuery Events
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Author**: Will Reid & Matt Iwicki
+**Version**: 1.0.2
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+Our goal with this project was to build on a mobile-first site, using jQuery to dynamically render blog posts sorted by most recent publication date and allow dynamic filtering in response to user preference for particular authors or categories.  We also enabled teaser functions to allow the user to view more articles in a glance and expand articles of interest, and we enabled tabbing between articles and the About Me section without a page reload.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+To build this app on your own machine, clone this repo and launch the html page in your browser.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+We are using a SMACSS organization of our CSS. We are using some light CSS animations to display and hide the menu, and we are using link tags to call the CSS in.  The index.html file reveals the basic template for each article; the blogArticles.js holds all the text content; the article.js file constructs each article and makes the posting available to the DOM; and the articleView.js file allows the user to interact with the elements on-screen.
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+10-26-2017 10:00am -- enabled
+10-26-2017 12:30pm -- enabled article filter logic
+10-26-2017 1:00pm -- enabled teaser hide/show logic
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
-```
+Created by Will Reid and Matt Iwicki, based off of source code from the Code Fellows 301 lab repo. We used the clearfix CSS convention from CSS Tricks: https://css-tricks.com/snippets/css/clear-fix/, the normalize.css from github.com/miwicki/normalize.css and the jQuery v3.2.1 library.  Matt LeBlanc helped build the CSS on the previous day's assignment. Ron Dunphy and Dustin Byers assisted in troubleshooting filter performance, and Ariel and Nicholas C provided insight on teaser functionality.
